@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZPush Documentation</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            max-width: 800px;
+            font-family: Arial, sans-serif;
+            background-color: #181818;
+            color: white;
+        }
+        h1 {
+            border-bottom: 4px solid #888;
+        }
+
+        h2 {
+            border-bottom: 1px solid #888;
+        }
+
+        .image {
+            border-radius: 8px;
+            border: 2px solid #2294f0;
+          
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            max-width: 500px;
+        }
+        a {
+             color: #2294f0;
+        }
+        a:link {
+            color: #2294f0;
+        }
+        a:visited{
+            color: #2294f0;
+        }
+        dt {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .important {
+            color: #D83632
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>ZPush Documentation</h1>
+    <img  src="images/funktionsgrafik.jpeg"
+        style="border-radius: 15px;display: block;margin-left: auto;margin-right: auto;width: 80%;max-width: 500px;" />
+
+    <p>
+        ZPush is an Android application that allows you to transfer files from your smartphone to a server on your
+        network. Unlike other Android apps, ZPush uses the approach of transferring new or modified files directly to
+        the server without restoring deleted or modified files on the server.
+        <br>
+        This means that once the file is on the server, you can edit/move it on the server and ZPush dose not restore
+        the file on the server.
+        ZPush is primarily designed to automatically save e.g. photos from your smartphone to your private server
+        without manual interaction.
+    </p>
+
+    <H2>What can ZPush</H2>
+    <ul>
+
+        <li>Automatically transfer directories and files from your smartphone to a server.</li>
+        <li>Rename files during transfer so that the name matches your wishes.</li>
+        <li>A connection is only established if the server is reachable.</li>
+        <li>Scheduled or manual upload.</li>
+        <li>For NAS-System wait time to wake up the NAS-System</li>
+        <li>support for Android 7 till Android 15</li>
+        <li>Multiple jobs for upload</li>
+        <li>The following server interfaces are supported:
+            <ul>
+                <li>SFTP</li>
+                <li>Samba (SMB 1.0/CIFS, SMB 2.0, SMB 2.1 and SMB 3.0)</li>
+                <li>Windows file shares</li>
+                <li>WebDAV</li>
+                <li>Nextcloud</li>
+                <li>PhotoPrism</li>
+            </ul>
+        </li>
+    </ul>
+    Do you have suggestions for improvement, please contact me per email: (<a href="mailto:matthias.zartmann+zpush@gmail.com">matthias.zartmann@gmail.com</a>)
+    <!------Main Page -->
+    <div class="section">
+        <h1>The main page </h1>
+
+        <img class="image" src="images/main.jpg">
+
+        <ol type="1">
+            <li>Activate the background upload.</li>
+            <li>ZPush upload new files from activated jobs in an interval and only when the server is reachable.</li>
+            <li>Open the Log file.</li>
+            <li>Add a new job.</li>
+            <li>Configure ZPush.</li>
+            <li>Run all activated jobs.</li>
+            <li>Open the About page.</li>
+            <li>This is a Job, tab to open job configuration.</li>
+            <li>Activate job for run automatic.</li>
+            <li>Run a single job.</li>
+        </ol>
+    </div>
+  <!------ZPush configuration -->    
+    <div class="section">
+        <h1>The ZPush configuration</h1>
+        <img class="image" src="images/mainConfig1.jpg">
+        <p>
+            The upload frequency defines how often ZPush check all activated jobs for new files and upload this files.
+            The android system decides itself when ZPush is executed, and therefore the following times are ony
+            approximate
+            values.
+            The left position of the slider suggests Android to start every 15 minutes, and the right position 10 hours.
+        </p>
+        <img class="image" src="images/mainConfig2.jpg">
+        <p>The scheduler only starts if these selected conditions are all fulfilled.</p>
+        <ol type="1">
+            <li>Start the background upload only when a Wi-Fi is connected</li>
+            <li>Start the background upload only when android detect that the device is idle</li>
+            <li>Start the background upload only when the device is charging</li>
+        </ol>
+
+        <img class="image" src="images/mainConfig3.jpg">
+        <p>
+            You can export all Job configurations to save this on your device.
+            The import, deletes all exists jobs and restores the jobs from the export.</p>
+    </div>
+
+
+    <!--Edit Job-->
+
+    <div class="section">
+        <h1>Edit Job </h1>
+        
+        <div class="itemdesc">
+            <img class="image" src="images/edit1.jpg">
+            <ol type="1">
+                <li>Input here the name of the job</li>
+                <li>Delete exists Job (only visible when edit a job)</li>
+                <li>Clone this job and after this, the configuration shows the cloned job</li>
+            </ol>
+        </div>
+
+        <h2>Source</h2>
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-localdir.jpg">
+            <p>
+                Tap here to open the directory picker and select a directory for upload.
+            </p>
+        </div>
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-include.jpg">
+            <p>
+                You can set include filter, all files match the pattern will be uploaded. Input a patter like:
+                "*.jpg,*.gif". Separate each pattern with a comma.
+            </p>
+        </div>
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-exclude.jpg">
+            <p>
+                This is like "include filter" but exclude the files that match the patterns.
+            </p>
+        </div>
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-DeleteAfterUpload.jpg">
+            <p>
+                If a file uploaded successfully, ZPush delete this from the device.
+                <span class="important">Please note that the source file will be irretrievably deleted.</span>
+            </p>
+        </div>
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-IncludeSubFolders.jpg">
+            <p>Upload all files included all subfolder, <span class="important"> if enabled the target structure is
+                    hide.</span></p>
+        </div>
+        <div class="itemdesc">
+
+
+            <img class="image" src="images/jobConfig-SkipFilesWifi.jpg">
+            <p>Skips files if they are larger than specified and no Wi-Fi is connected. If the job is run again and
+                Wi-Fi is
+                available, the skipped files are transferred. This option is useful if you also transfer files via the
+                mobile network when you are on the move, but prefer to transfer larger files via your Wi-Fi network</p>
+        </div>
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-SetStartPoint.jpg">
+            <p>Opens the page for setting the starting point for the next transfer.
+                This makes it possible to skip files or transfer them again.</p>
+        </div>
+
+
+
+        <h2>Target</h2>
+        <!--  filename pattern  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-filename.jpg">
+            <p>Defines the pattern how the target filename will be created. Tab in the icon on the right to open the
+                designer.</p>
+        </div>
+        <!--  Driver  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-driver.jpg">
+            <p>Select the driver depend on your target server.</p>
+            Follow driver are available:
+            <dl>
+                <dt>Samba </dt>
+                <dd>This driver can you use if you want to upload to a Linux samba share or a Windows share.
+                    This driver support the SMB protocol SSMB 1.0/CIFS, SMB 2.0, SMB 2.1 and SMB 3.0 these are
+                    compatible with Windows 10, Windows 11 and all modern Linux servers.</dd>
+                <dt>WebDAV</dt>
+                <dd>
+                    This is an http/https protocol to transfer files over a web server. ZPush supports streaming
+                    for big uploads. I have tested this with Apache2 under Ubuntu 20.04.5.
+                    Supported http/https authentications are: Basic and Digest
+                </dd>
+                <dt>Nextcloud</dt>
+                <dd>This protocol is equal like the WebDAV protocol but support big files and implement the
+                    protocol extensions from Nextcloud.</dd>
+                <dt>PhotoPrism</dt>
+                <dd>For upload in PhotoPrism.</dd>
+                <dt>SFtp (Secure File Transfer Protocol)
+                <dd>This protocol is special for Linux server and use the ssh to transfer files. </dd>
+            </dl>
+        </div>
+        <!--  Hostname  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-host.jpg">
+            <p>Input here the server name or the IPV4 address and if the port deviating from the standard you
+                can append it by double point.</p>
+
+            Samples:
+            <ul>
+                <li>Ubuntu</li>
+                <li>Ubuntu:443
+                <li>192:168:178:55</li>
+                <li>192:168:178:55:443</li>
+            </ul>
+        </div>
+        <!--  ssl  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-ssl.jpg">
+            <p>If you have a http based protocol, you can enable SSL to communicate over https. 
+            Self singed certificates are accepted! </p>
+        </div>
+        <!--  username  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-username.jpg">
+            <p>Input the username target directory need an authentication. Leave empty for anonymous access.</p>
+        </div>
+        <!--  password  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-password.jpg">
+            <p>Input the right password for the given username.</p>
+        </div>
+
+        <!--  target path  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-path.jpg">
+            <p>The target path depends on your selected driver</p>
+            <dl>
+                <dt>Samba (Windows share)/dt>
+                <dd>\Share\directory1\directory2</dd>
+                <dt>WebDAV</dt>
+                <dd>/directory1/directory2</dd>
+                <dt>NextCloud</dt>
+                <dd>/remote.php/dav/files/<span class="important">[your nextcloud
+                        username]</span>/directory1/directory2</dd>
+                <dt>SFTP</dt>
+                <dd>/directory1/directory2</dd>
+                <dt>PhotoPrism</dt>
+                <dd>/originals</dd>
+            </dl>
+            <p>If you click the folder icon, a directory picker opens, and you can browse the right target
+            directory.</p>  
+        </div>
+
+        <!--  Test  -->
+        <div class="itemdesc">
+            <img class="image" src="images/jobConfig-target-test.jpg">
+            <p>This button test your setting and check if the server reachable and can access the selected
+                directory.
+                <span class="important">Please test always your settings!</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
