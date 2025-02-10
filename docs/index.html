@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
         }
 
         body {
+            top: 0px !important;
             margin: 20px;
             margin-left: auto;
             margin-right: auto;
@@ -19,6 +21,7 @@
             background-color: #181818;
             color: white;
         }
+
         h1 {
             border-bottom: 4px solid #888;
         }
@@ -30,22 +33,26 @@
         .image {
             border-radius: 8px;
             border: 2px solid #2294f0;
-          
+
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 50%;
             max-width: 500px;
         }
+
         a {
-             color: #2294f0;
+            color: #2294f0;
         }
+
         a:link {
             color: #2294f0;
         }
-        a:visited{
+
+        a:visited {
             color: #2294f0;
         }
+
         dt {
             font-weight: 600;
             text-decoration: underline;
@@ -58,15 +65,60 @@
         .important {
             color: #D83632
         }
+
+        body>.skiptranslate {
+            display: none !important;
+        }
     </style>
 </head>
 
 <body>
-    
+    <!-- google translate start-->
+    <div style="display: flex; justify-content: flex-end">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,de,es,fr,it,zh-CN,nl,ru',
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <!-- google translate end-->
     <h1>ZPush Documentation</h1>
-    <img  src="images/funktionsgrafik.jpeg"
+    <img src="images/funktionsgrafik.jpeg"
         style="border-radius: 15px;display: block;margin-left: auto;margin-right: auto;width: 80%;max-width: 500px;" />
 
+
+    <H2>Index</H2>
+    <ul>
+        <li><a href="#INTRODUCTION">Introduction</a></li>
+        <li><a href="#MAIN-PAGE">Main Page</a></li>
+        <li><a href="#ZPUSH-CONFIGURATION">ZPush Configuration</a></li>
+        <li><a href="#Edit-JOB">Job Configuration</a></li>
+        <li><a href="#SAMPLE-CONFIG">Sample Configurations</a>
+            <ul>
+                <li><a href="#SAMPLE-SAMBA">Samba or Windows share</a></li>
+                <li><a href="#SAMPLE-WEBDAV">WebDAV</a></li>
+                <li><a href="#SAMPLE-SFTP">SFTP</a></li>
+                <li><a href="#SAMPLE-NEXTCLOUD">Nextcloud</a></li>
+                <li><a href="#SAMPLE-PHOTOPRISM">PhotoPrism</a></li>
+            </ul>
+        </li>
+        <li><a href="#history">ZPush versions history</a></li>
+
+    </ul>
+    <div id="INTRODUCTION" class="section">
+    <H2>Introduction</H2>
     <p>
         ZPush is an Android application that allows you to transfer files from your smartphone to a server on your
         network. Unlike other Android apps, ZPush uses the approach of transferring new or modified files directly to
@@ -99,9 +151,12 @@
             </ul>
         </li>
     </ul>
-    Do you have suggestions for improvement, please contact me per email: (<a href="mailto:matthias.zartmann+zpush@gmail.com">matthias.zartmann@gmail.com</a>)
+    Do you have suggestions for improvement, please contact me per email: (<a
+        href="mailto:matthias.zartmann+zpush@gmail.com">matthias.zartmann@gmail.com</a>)
+
+    </div>
     <!------Main Page -->
-    <div class="section">
+    <div id="MAIN-PAGE" class="section">
         <h1>The main page </h1>
 
         <img class="image" src="images/main.jpg">
@@ -119,8 +174,8 @@
             <li>Run a single job.</li>
         </ol>
     </div>
-  <!------ZPush configuration -->    
-    <div class="section">
+    <!------ZPush configuration -->
+    <div id="ZPUSH-CONFIGURATION" class="section">
         <h1>The ZPush configuration</h1>
         <img class="image" src="images/mainConfig1.jpg">
         <p>
@@ -147,9 +202,9 @@
 
     <!--Edit Job-->
 
-    <div class="section">
+    <div id="Edit-JOB" class="section">
         <h1>Edit Job </h1>
-        
+
         <div class="itemdesc">
             <img class="image" src="images/edit1.jpg">
             <ol type="1">
@@ -257,8 +312,8 @@
         <!--  ssl  -->
         <div class="itemdesc">
             <img class="image" src="images/jobConfig-target-ssl.jpg">
-            <p>If you have a http based protocol, you can enable SSL to communicate over https. 
-            Self singed certificates are accepted! </p>
+            <p>If you have a http based protocol, you can enable SSL to communicate over https.
+                Self singed certificates are accepted! </p>
         </div>
         <!--  username  -->
         <div class="itemdesc">
@@ -289,7 +344,7 @@
                 <dd>/originals</dd>
             </dl>
             <p>If you click the folder icon, a directory picker opens, and you can browse the right target
-            directory.</p>  
+                directory.</p>
         </div>
 
         <!--  Test  -->
@@ -301,30 +356,67 @@
             </p>
         </div>
     </div>
-    <h1 id="history">Version history</h1>
-    <h2>Release 78 Version 2.1.1.0</h2>
-    <ul>
-        <li>Add official support for PhotoPrism.</li>
-        <li>Add new feature to upload big files only when wifi is connected.</li>
-        <li>Versions history outsourced to this site.</li>
-        <li>New Documentation.</li>
-        <li>Fix: small bugs.</li>
-    </ul>
 
-    <h2>Release 77 Version 2.1.0.1</h2>
-    <ul>
-        <li>Fix: PhotoPrism authentication problem.</li>
-    </ul>
+ <!--Sample Configuration-->
+ <div id="SAMPLE-CONFIGURATION" class="section">
+    <h1>Sample Configuration </h1>
+    <p>In this chapter you will see various example configurations of how you can configure your target system.</p>
+    
+    <h2 id="SAMPLE-SAMBA">Samba or Windows share</h2>
+    <p>This example uses the root folder from the share ZPUSH_PWD. A user and password are required for this share. If you do not require a user for your share, leave the User field empty.</p>
+    <img class="image" src="images/sample_samba.jpg">
+    
 
-    <h2>Release 76 Version 2.1.0.0</h2>
-    <ul>
-        <li>Improvements to the user interface.</li>
-        <li>New option [Skip file if already exists] on page Edit job.</li>
-        <li>Changing the scheduler to a more reliable scheduler.</li>
-        <li>Improving performance.</li>
-        <li>Libraries brought up to date.</li>
-        <li>Fix: small bugs</li>
-    </ul>
+    <h2 id="SAMPLE-WEBDAV">WebDAV</h2>
+    <p>This example uses WebDAV (Web-based Distributed Authoring and Versioning) which can be accessed via Http under port 8080. It requires authentication and this can be done via “Basic Authentication” or “Digest Access Authentication”.</p>
+    <img class="image" src="images/sample_webdav.jpg">
+    
+
+    
+    <h2 id="SAMPLE-SFTP">SFTP</h2>
+    <p>This example for SFTp (Secure File Transfer Protocol) shows a connection to a Linux computer, the user name and password corresponds to an operating system user. </p>
+    <img class="image" src="images/sample_sftp.jpg">
+    
+    
+    <h2 id="SAMPLE-NEXTCLOUD">Nextcloud</h2>
+    <p>This is an example for <a href="https://nextcloud.com" target="_blank">Nextcloud</a> users and accesses an installed Nextcloud via Https with the Nextcloud user zpush. Please make sure that the user is correctly specified in the target path. </p>
+    <img class="image" src="images/sample_nextcloud.jpg">
+   
+   
+    <h2 id="SAMPLE-PHOTOPRISM">PhotoPrism</h2>
+    <p>This example uses the <a href="https://www.photoprism.app/" target="_blank">PhotoPrism</a> software, in this example PhotoPrism is configured for Https and runs under the standard port 2342.</p>
+    <img class="image" src="images/sample_photoprism.jpg">
+    
+
+ </div>
+
+    <div class="section">
+        <h1 id="history">Version history</h1>
+        <h2>Release 78 Version 2.1.1.0</h2>
+        <ul>
+            <li>Add official support for PhotoPrism.</li>
+            <li>Add new feature to upload big files only when wifi is connected.</li>
+            <li>Versions history outsourced to this site.</li>
+            <li>New Documentation.</li>
+            <li>Fix: small bugs.</li>
+        </ul>
+
+        <h2>Release 77 Version 2.1.0.1</h2>
+        <ul>
+            <li>Fix: PhotoPrism authentication problem.</li>
+        </ul>
+
+        <h2>Release 76 Version 2.1.0.0</h2>
+        <ul>
+            <li>Improvements to the user interface.</li>
+            <li>New option [Skip file if already exists] on page Edit job.</li>
+            <li>Changing the scheduler to a more reliable scheduler.</li>
+            <li>Improving performance.</li>
+            <li>Libraries brought up to date.</li>
+            <li>Fix: small bugs</li>
+        </ul>
+    </div>
+
 </body>
 
 </html>

@@ -4,3 +4,5 @@ network. Unlike other Android apps, ZPush uses the approach of transferring new 
 the server without restoring deleted or modified files on the server.
 
 [ZPush Playstore](https://play.google.com/store/apps/details?id=de.maza.zpush&hl=de)
+
+[ZPush Documentation](https://maza70.github.io/zpush-doc/docs/index.html)
