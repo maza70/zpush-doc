@@ -151,7 +151,13 @@
                 <li>Start the background upload only when android detect that the device is idle</li>
                 <li>Start the background upload only when the device is charging</li>
             </ol>
-
+            <img class="image" src="images/mainConfigRetry.jpg">
+            <p>The scheduler only starts if these selected conditions are all fulfilled.</p>
+            <ol type="1">
+                <li>Start the background upload only when a Wi-Fi is connected</li>
+                <li>Start the background upload only when android detect that the device is idle</li>
+                <li>Start the background upload only when the device is charging</li>
+            </ol>
             <img class="image" src="images/mainConfig3.jpg">
             <p>
                 You can export all Job configurations to save this on your device.
@@ -361,6 +367,14 @@
 
         <div class="section">
             <h1 id="history">Version history</h1>
+            <h2>Release 79 Version 2.1.2.0</h2>
+            <ul>
+                <li>Retry is now configurable.</li>
+                <li>NAS spin up is now configurable.</li>
+                <li>Optimize performance "skip if file exists" on huge directories.</li>
+                <li>The connection to the server is now tried several times.</li>
+                <li>Fixed: Bug in scheduler in combination with enabled option "Only when device idle".</li>
+            </ul>
             <h2>Release 78 Version 2.1.1.0</h2>
             <ul>
                 <li>Add official support for PhotoPrism.</li>
