@@ -99,7 +99,7 @@
                 <li>The following server interfaces are supported:
                     <ul>
                         <li>SFTP</li>
-                        <li>Samba (SMB 1.0/CIFS, SMB 2.0, SMB 2.1 and SMB 3.0)</li>
+                        <li>Samba (SMB 2.0, SMB 2.1 and SMB 3.0)</li>
                         <li>Windows file shares</li>
                         <li>WebDAV</li>
                         <li>Nextcloud</li>
@@ -239,8 +239,10 @@
                 <dl>
                     <dt>Samba </dt>
                     <dd>This driver can you use if you want to upload to a Linux samba share or a Windows share.
-                        This driver support the SMB protocol SSMB 1.0/CIFS, SMB 2.0, SMB 2.1 and SMB 3.0 these are
-                        compatible with Windows 10, Windows 11 and all modern Linux servers.</dd>
+                        This driver support the SMB protocol SMB 2.0, SMB 2.1 and SMB 3.0 these are
+                        compatible with Windows 10, Windows 11 and all modern Linux servers.
+                        <span class="important">Please note that Windows 11 no longer supports anonymous connections! With Windows 11, you must authenticate yourself with a user and password.</span>
+                    </dd>
                     <dt>WebDAV</dt>
                     <dd>
                         This is an http/https protocol to transfer files over a web server. ZPush supports streaming
@@ -326,7 +328,14 @@
 
             <h2 id="SAMPLE-SAMBA">Samba or Windows share</h2>
             <p>This example uses the root folder from the share ZPUSH_PWD. A user and password are required for this
-                share. If you do not require a user for your share, leave the User field empty.</p>
+                share. If you do not require a user for your share, leave the User field empty.
+            
+                
+            </p>
+            <p>
+                <span class="important">Please note that Windows 11 no longer supports anonymous connections! With Windows 11, you must authenticate yourself with a user and password.</span>
+            </p>
+
             <img class="image" src="images/sample_samba.jpg">
 
 
