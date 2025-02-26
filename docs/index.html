@@ -109,8 +109,9 @@
             </ul>
             Do you have suggestions for improvement, please contact me per email: (<a
                 href="mailto:matthias.zartmann+zpush@gmail.com">matthias.zartmann@gmail.com</a>)
+   
+       </div>
 
-        </div>
         <!------Main Page -->
         <div id="MAIN-PAGE" class="section">
             <h1>The main page </h1>
@@ -134,8 +135,9 @@
         <!------ZPush configuration -->
         <div id="ZPUSH-CONFIGURATION" class="section">
             <h1>The ZPush configuration</h1>
-            <img class="image" src="images/mainConfig1.jpg">
-            <p>
+          
+            <img id="mainConfigUploadFrequence" class="image" src="images/mainConfig1.jpg">
+            <p >
                 The upload frequency defines how often ZPush check all activated jobs for new files and upload this
                 files.
                 The android system decides itself when ZPush is executed, and therefore the following times are ony
@@ -144,15 +146,19 @@
                 The left position of the slider suggests Android to start every 15 minutes, and the right position 10
                 hours.
             </p>
-            <img class="image" src="images/mainConfig2.jpg">
+            <img id="mainConfigUploadWhen" class="image" src="images/mainConfig2.jpg">
             <p>The scheduler only starts if these selected conditions are all fulfilled.</p>
             <ol type="1">
                 <li>Start the background upload only when a Wi-Fi is connected</li>
                 <li>Start the background upload only when android detect that the device is idle</li>
                 <li>Start the background upload only when the device is charging</li>
             </ol>
+            <img id="mainConfigUploadRetries"  class="image" src="images/mainConfigRetries.jpg">
+            <p>Here you specify how often ZPush attempts to repeat the failed operation before it aborts with an error. 
+               You can specify this first for all operations, that are executed during the upload. 
+               For the spinup for the Nas you can set this in the second slider and only affects the Nas spinup.</p>
 
-            <img class="image" src="images/mainConfig3.jpg">
+            <img id="mainConfigUploadExport"  class="image" src="images/mainConfig3.jpg">
             <p>
                 You can export all Job configurations to save this on your device.
                 The import, deletes all exists jobs and restores the jobs from the export.</p>
@@ -370,12 +376,8 @@
 
         <hr>
         
-        <div id="history" class="hcenter" style="margin-bottom: 2em;">
-            <a href="./history.html">Open ZPush versions history</a>
-        </div>
-
-
-        <div class="hcenter" style="margin-bottom: 2em;">
+        
+        <div class="hcenter" style="margin-bottom: 2em;margin-top: 2em;">
             ZPush by Matthias Zartmann<br> Email: <a id="email" href="--">Please activate Javascript</a>
 
             <script language="JavaScript">
