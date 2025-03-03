@@ -21,6 +21,7 @@
             display: none !important;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 </head>
 
 <body>
@@ -399,6 +400,23 @@
      
     </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+        window.cookieconsent.initialise({
+        "palette": {
+        "popup": { "background": "#2E2E2E", "text": "#FFFFFF"},
+        "button": { "background": "#181818"}},
+        "theme": "basic",
+        "position": "bottom-right",
+        "content": {
+            "message": "Diese Webseite verwendet Cookies, um Ihnen ein angenehmeres Surfen zu ermöglichen.",
+            "dismiss": "Ok",
+            "link": "Lese die DSGVO",
+            "href": "./dsgvo.html"
+            }
+        });
+        </script>
 </body>
 
 </html>
