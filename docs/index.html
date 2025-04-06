@@ -48,7 +48,7 @@
 
         <!-- google translate end-->
         <h1>ZPush Documentation</h1>
-        <img src="images/funktionsgrafik.jpeg"
+        <img src="images/funktionsgrafik.jpg"
             style="border-radius: 15px;display: block;margin-left: auto;margin-right: auto;width: 80%;max-width: 500px;" />
 
 
@@ -72,17 +72,12 @@
             <H2>Introduction</H2>
             <p>
                 ZPush is an Android application that allows you to transfer files from your smartphone to a server on
-                your
-                network. Unlike other Android apps, ZPush uses the approach of transferring new or modified files
-                directly to
-                the server without restoring deleted or modified files on the server.
+                your network.
+                Unlike other Android apps, ZPush uses the approach of transmitting new or modified files to the server only once. 
+                This allows you to move the files on the server without them being retransferred by ZPush.
                 <br>
-                This means that once the file is on the server, you can edit/move it on the server and ZPush dose not
-                restore
-                the file on the server.
                 ZPush is primarily designed to automatically save e.g. photos from your smartphone to your private
-                server
-                without manual interaction.
+                server without manual interaction.
             </p>
 
             <H2>What can ZPush</H2>
@@ -109,6 +104,13 @@
             Do you have suggestions for improvement, please contact me per email: (<a
                 href="mailto:matthias.zartmann+zpush@gmail.com">matthias.zartmann@gmail.com</a>)
    
+
+          <H2>Security of your data</H2>
+          <ul>
+            <li>ZPush does not transmit any data to third parties!</li>
+            <li>The login to your server only occurs once the server is reachable and the port is open. Even if ZPush starts the job on foreign networks, no login attempts are made if the specified server is not found. To prevent confusion in foreign networks, use the IPv6 as the server name.</li>
+          </ul>
+          </p>
        </div>
 
         <!------Main Page -->
@@ -173,8 +175,10 @@
                 <img class="image" src="images/edit1.jpg">
                 <ol type="1">
                     <li>Input here the name of the job</li>
+                    <li>Activate the job so that it is executed on automatic/manual start.</li>
                     <li>Delete exists Job (only visible when edit a job)</li>
-                    <li>Clone this job and after this, the configuration shows the cloned job</li>
+                    <li>Clone this job and after this, the configuration shows the cloned job.</li>
+                    <li>The job statistics show you various statistical information.</li>
                 </ol>
             </div>
 
@@ -205,6 +209,16 @@
                     <span class="important">Please note that the source file will be irretrievably deleted.</span>
                 </p>
             </div>
+
+            <div class="itemdesc">
+                <img class="image" src="images/jobConfig-checksum.jpg">
+                <p>If activated, a checksum of the target file and source file is calculated and compared. This ensures that the target file corresponds 100% to the source file.
+                    <br>
+                    <span class="important">Please note that double the amount of data is transferred when activated.</span>
+                </p>
+                
+            </div>
+            
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-IncludeSubFolders.jpg">
                 <p>Upload all files included all subfolder, <span class="important"> if enabled the target structure is
@@ -266,7 +280,7 @@
             <!--  Hostname  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-host.jpg">
-                <p>Input here the server name or the IPV4 address and if the port deviating from the standard you
+                <p>Input here the server name or the IPv4 or IPv6 address and if the port deviating from the standard you
                     can append it by double point.</p>
 
                 Samples:
@@ -274,7 +288,8 @@
                     <li>Ubuntu</li>
                     <li>Ubuntu:443
                     <li>192:168:178:55</li>
-                    <li>192:168:178:55:443</li>
+                    <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]</li>
+                    <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]:443</li>
                 </ul>
             </div>
             <!--  ssl  -->
