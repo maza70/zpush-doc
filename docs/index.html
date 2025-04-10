@@ -25,6 +25,7 @@
 </head>
 
 <body>
+
     <div class="site">
         <!-- google translate start-->
         <div style="display: flex; justify-content: flex-end">
@@ -80,7 +81,7 @@
                 server without manual interaction.
             </p>
 
-            <H2>What can ZPush</H2>
+            <H2 id="WCZ">What can ZPush</H2>
             <ul>
 
                 <li>Automatically transfer directories and files from your smartphone to a server.</li>
@@ -105,10 +106,15 @@
                 href="mailto:matthias.zartmann+zpush@gmail.com">matthias.zartmann@gmail.com</a>)
    
 
-          <H2>Security of your data</H2>
+          <H2 id="SOYD">Security of your data</H2>
           <ul>
             <li>ZPush does not transmit any data to third parties!</li>
-            <li>The login to your server only occurs once the server is reachable and the port is open. Even if ZPush starts the job on foreign networks, no login attempts are made if the specified server is not found. To prevent confusion in foreign networks, use the IPv6 as the server name.</li>
+            <li>ZPush unfortunately cannot detect which network the phone is currently connected to, as this would require the "Precise Location" permission.
+                Before a login, ZPush checks whether the server is reachable within the network and also verifies the port used by the protocol.
+                If the server and port are reachable, a login attempt is made.
+                If you want to ensure that ZPush can only connect to your server, it is best to use the server's IPv6 link-local address, which starts with fe80:.
+                Enter the IPv6 link-local address in the "Target Host" field as shown in the following example:
+                [fe80::da3a:ccff:fadd:b741]</li>
           </ul>
           </p>
        </div>
@@ -138,7 +144,7 @@
             <h1>The ZPush configuration</h1>
           
             <img id="mainConfigUploadFrequence" class="image" src="images/mainConfig1.jpg">
-            <p >
+            <p class="center">
                 The upload frequency defines how often ZPush check all activated jobs for new files and upload this
                 files.
                 The android system decides itself when ZPush is executed, and therefore the following times are ony
@@ -155,12 +161,12 @@
                 <li>Start the background upload only when the device is charging</li>
             </ol>
             <img id="mainConfigUploadRetries"  class="image" src="images/mainConfigRetries.jpg">
-            <p>Here you specify how often ZPush attempts to repeat the failed operation before it aborts with an error. 
+            <p class="center" >Here you specify how often ZPush attempts to repeat the failed operation before it aborts with an error. 
                You can specify this first for all operations, that are executed during the upload. 
                For the spinup for the Nas you can set this in the second slider and only affects the Nas spinup.</p>
 
             <img id="mainConfigUploadExport"  class="image" src="images/mainConfig3.jpg">
-            <p>
+            <p class="center"
                 You can export all Job configurations to save this on your device.
                 The import, deletes all exists jobs and restores the jobs from the export.</p>
         </div>
@@ -185,50 +191,50 @@
             <h2>Source</h2>
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-localdir.jpg">
-                <p>
+                <p class="center">
                     Tap here to open the directory picker and select a directory for upload.
                 </p>
             </div>
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-include.jpg">
-                <p>
+                <p class="center">
                     You can set include filter, all files match the pattern will be uploaded. Input a patter like:
                     "*.jpg,*.gif". Separate each pattern with a comma.
                 </p>
             </div>
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-exclude.jpg">
-                <p>
+                <p class="center">
                     This is like "include filter" but exclude the files that match the patterns.
                 </p>
             </div>
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-DeleteAfterUpload.jpg">
-                <p>
+                <p class="center">
                     If a file uploaded successfully, ZPush delete this from the device.
-                    <span class="important">Please note that the source file will be irretrievably deleted.</span>
+                    <span class="important"><br>Please note that the source file will be irretrievably deleted.</span>
                 </p>
             </div>
 
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-checksum.jpg">
-                <p>If activated, a checksum of the target file and source file is calculated and compared. This ensures that the target file corresponds 100% to the source file.
-                    <br>
-                    <span class="important">Please note that double the amount of data is transferred when activated.</span>
+                <p class="center">If activated, a checksum of the target file and source file is calculated and compared. This ensures that the target file corresponds 100% to the source file.
+              
+                    <span class="important"><br>Please note that double the amount of data is transferred when activated.</span>
                 </p>
                 
             </div>
             
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-IncludeSubFolders.jpg">
-                <p>Upload all files included all subfolder, <span class="important"> if enabled the target structure is
+                <p class="center">Upload all files included all subfolder, <span class="important"> if enabled the target structure is
                         hide.</span></p>
             </div>
             <div class="itemdesc">
 
 
                 <img class="image" src="images/jobConfig-SkipFilesWifi.jpg">
-                <p>Skips files if they are larger than specified and no Wi-Fi is connected. If the job is run again and
+                <p class="center">Skips files if they are larger than specified and no Wi-Fi is connected. If the job is run again and
                     Wi-Fi is
                     available, the skipped files are transferred. This option is useful if you also transfer files via
                     the
@@ -237,7 +243,7 @@
             </div>
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-SetStartPoint.jpg">
-                <p>Opens the page for setting the starting point for the next transfer.
+                <p class="center">Opens the page for setting the starting point for the next transfer.
                     This makes it possible to skip files or transfer them again.</p>
             </div>
 
@@ -247,14 +253,15 @@
             <!--  filename pattern  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-filename.jpg">
-                <p>Defines the pattern how the target filename will be created. Tab in the icon on the right to open the
+                <p class="center">Defines the pattern how the target filename will be created. Tab in the icon on the right to open the
                     designer.</p>
             </div>
             <!--  Driver  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-driver.jpg">
-                <p>Select the driver depend on your target server.</p>
-                Follow driver are available:
+                <p class="center">Select the driver depend on your target server.<br>
+                    <br>
+                Follow driver are available:</p>
                 <dl>
                     <dt>Samba </dt>
                     <dd>This driver can you use if you want to upload to a Linux samba share or a Windows share.
@@ -280,7 +287,7 @@
             <!--  Hostname  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-host.jpg">
-                <p>Input here the server name or the IPv4 or IPv6 address and if the port deviating from the standard you
+                <p class="center">Input here the server name or the IPv4 or IPv6 address and if the port deviating from the standard you
                     can append it by double point.</p>
 
                 Samples:
@@ -295,24 +302,24 @@
             <!--  ssl  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-ssl.jpg">
-                <p>If you have a http based protocol, you can enable SSL to communicate over https.
+                <p class="center">If you have a http based protocol, you can enable SSL to communicate over https.
                     Self singed certificates are accepted! </p>
             </div>
             <!--  username  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-username.jpg">
-                <p>Input the username target directory need an authentication. Leave empty for anonymous access.</p>
+                <p class="center">Input the username target directory need an authentication. Leave empty for anonymous access.</p>
             </div>
             <!--  password  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-password.jpg">
-                <p>Input the right password for the given username.</p>
+                <p class="center">Input the right password for the given username.</p>
             </div>
 
             <!--  target path  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-path.jpg">
-                <p>The target path depends on your selected driver</p>
+                <p class="center">The target path depends on your selected driver</p>
                 <dl>
                     <dt>Samba (Windows share)/dt>
                     <dd>\Share\directory1\directory2</dd>
@@ -326,16 +333,16 @@
                     <dt>PhotoPrism</dt>
                     <dd>/originals</dd>
                 </dl>
-                <p>If you click the folder icon, a directory picker opens, and you can browse the right target
+                <p class="center">If you click the folder icon, a directory picker opens, and you can browse the right target
                     directory.</p>
             </div>
 
             <!--  Test  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-test.jpg">
-                <p>This button test your setting and check if the server reachable and can access the selected
+                <p class="center">This button test your setting and check if the server reachable and can access the selected
                     directory.
-                    <span class="important">Please test always your settings!</span>
+                    <span class="important"><br>Please test always your settings!</span>
                 </p>
             </div>
         </div>
@@ -343,11 +350,11 @@
         <!--Sample Configuration-->
         <div id="SAMPLE-CONFIGURATIONS" class="section">
             <h1>Sample Configurations </h1>
-            <p>In this chapter you will see various example configurations of how you can configure your target system.
+            <p class="center">In this chapter you will see various example configurations of how you can configure your target system.
             </p>
 
             <h2 id="SAMPLE-SAMBA">Samba or Windows share</h2>
-            <p>This example uses the root folder from the share ZPUSH_PWD. A user and password are required for this
+            <p class="center">This example uses the root folder from the share ZPUSH_PWD. A user and password are required for this
                 share. If you do not require a user for your share, leave the User field empty.
             
                 
@@ -360,7 +367,7 @@
 
 
             <h2 id="SAMPLE-WEBDAV">WebDAV</h2>
-            <p>This example uses WebDAV (Web-based Distributed Authoring and Versioning) which can be accessed via Http
+            <p class="center">This example uses WebDAV (Web-based Distributed Authoring and Versioning) which can be accessed via Http
                 under port 8080. It requires authentication and this can be done via “Basic Authentication” or “Digest
                 Access Authentication”.</p>
             <img class="image" src="images/sample_webdav.jpg">
@@ -368,20 +375,20 @@
 
 
             <h2 id="SAMPLE-SFTP">SFTP</h2>
-            <p>This example for SFTp (Secure File Transfer Protocol) shows a connection to a Linux computer, the user
+            <p class="center">This example for SFTp (Secure File Transfer Protocol) shows a connection to a Linux computer, the user
                 name and password corresponds to an operating system user. </p>
             <img class="image" src="images/sample_sftp.jpg">
 
 
             <h2 id="SAMPLE-NEXTCLOUD">Nextcloud</h2>
-            <p>This is an example for <a href="https://nextcloud.com" target="_blank">Nextcloud</a> users and accesses
+            <p class="center">This is an example for <a href="https://nextcloud.com" target="_blank">Nextcloud</a> users and accesses
                 an installed Nextcloud via Https with the Nextcloud user zpush. Please make sure that the user is
                 correctly specified in the target path. </p>
             <img class="image" src="images/sample_nextcloud.jpg">
 
 
             <h2 id="SAMPLE-PHOTOPRISM">PhotoPrism</h2>
-            <p>This example uses the <a href="https://www.photoprism.app/" target="_blank">PhotoPrism</a> software, in
+            <p class="center">This example uses the <a href="https://www.photoprism.app/" target="_blank">PhotoPrism</a> software, in
                 this example PhotoPrism is configured for Https and runs under the standard port 2342.</p>
             <img class="image" src="images/sample_photoprism.jpg">
 

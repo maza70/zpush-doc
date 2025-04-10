@@ -64,3 +64,7 @@ li {
 .important {
     color: #D83632
 }
+
+.center {
+   text-align: center; 
+}
