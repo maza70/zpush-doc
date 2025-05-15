@@ -56,6 +56,7 @@
         <H2>Index</H2>
         <ul>
             <li><a href="#INTRODUCTION">Introduction</a></li>
+            <li><a href="#GTK">Good to known</a></li>
             <li><a href="#MAIN-PAGE">Main Page</a></li>
             <li><a href="#ZPUSH-CONFIGURATION">ZPush Configuration</a></li>
             <li><a href="#Edit-JOB">Job Configuration</a></li>
@@ -116,7 +117,18 @@
                 Enter the IPv6 link-local address in the "Target Host" field as shown in the following example:
                 [fe80::da3a:ccff:fadd:b741]</li>
           </ul>
-          </p>
+   
+
+          <H2 id="GTK">Good to know</H2>
+          <H3>Dynamic Mac Address</H2>
+          <p>
+            Android Wifi connections can have dynamic Mac addresses. This can cause problems when changing the access point, so that the name resolution of the server does not work for a while. To avoid these problems, deactivate the dynamic assignment of the MAC address in the Wifi configuration of the connected Wifi network. Alternatively, you can also work with IP addresses in ZPush.
+         </p>
+         <H3>Problems with ZPush</H2>
+         <p>
+          You are already very close to solving the problem since you are reading this guide :-) But there are always problems where you get stuck and if you think it's ZPush because other software works, please contact me. On the "About ZPush" page there is an “Email to support” button that you can use to send me an email with all the information I need to analyze the problem. The information does not include passwords but server names and IP addresses.
+         </p>
+          
        </div>
 
         <!------Main Page -->
@@ -288,7 +300,7 @@
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-host.jpg">
                 <p class="center">Input here the server name or the IPv4 or IPv6 address and if the port deviating from the standard you
-                    can append it by double point.</p>
+                    can append it by double point. If you have problems with the Name resolution, please use the Ip address or deactivate the dynamic Mac address on your device. </p>
 
                 Samples:
                 <ul>
