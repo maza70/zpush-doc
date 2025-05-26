@@ -68,3 +68,12 @@ li {
 .center {
    text-align: center; 
 }
+dd
+ {
+   margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.itemdesc  {
+   margin-bottom: 4em;  
+}
