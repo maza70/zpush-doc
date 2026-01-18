@@ -115,9 +115,10 @@
             <li>ZPush unfortunately cannot detect which network the phone is currently connected to, as this would require the "Precise Location" permission.
                 Before a login, ZPush checks whether the server is reachable within the network and also verifies the port used by the protocol.
                 If the server and port are reachable, a login attempt is made.
-                If you want to ensure that ZPush can only connect to your server, it is best to use the server's IPv6 link-local address, which starts with fe80:.
-                Enter the IPv6 link-local address in the "Target Host" field as shown in the following example:
-                [fe80::da3a:ccff:fadd:b741]</li>
+                If you want to ensure that ZPush can only connect to your server, 
+                it is best to use the server's IPv6 Unique Local Address (ULA) or Global Unicast Address (GUA).
+                Enter the IPv6 address in the "Target Host" field as shown in the following example:
+                [fd7c:37a0:52c6:0:da3a:ddaa:fccc:b242]</li>
           </ul>
    
 
