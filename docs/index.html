@@ -21,12 +21,13 @@
             display: none !important;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 </head>
 
 <body>
 
-    <img src="https://fun.goip.de:26443/site_counter?site=zpush" style="display:none;" alt="">  
+    <img src="https://fun.goip.de:26443/site_counter?site=zpush" style="display:none;" alt="">
     <div class="site">
         <!-- google translate start-->
         <div style="display: flex; justify-content: flex-end">
@@ -50,24 +51,23 @@
 
         <!-- google translate end-->
         <h1>ZPush Documentation</h1>
-        <img src="images/funktionsgrafik.jpg"   
+        <img src="images/funktionsgrafik.jpg"
             style="border-radius: 15px;display: block;margin-left: auto;margin-right: auto;width: 80%;max-width: 500px;" />
 
 
         <H2>Index</H2>
         <ul>
             <li><a href="#INTRODUCTION">Introduction</a></li>
-            <li><a href="#GTK">Good to known</a></li>
-            <li><a href="#MAIN-PAGE">Main Page</a></li>
-            <li><a href="#ZPUSH-CONFIGURATION">ZPush Configuration</a></li>
-            <li><a href="#Edit-JOB">Job Configuration</a></li>
-            <li><a href="#SAMPLE-CONFIGURATIONS">Sample Configurations</a>
+            <li><a href="#MAIN-PAGE">Main page</a></li>
+            <li><a href="#ZPUSH-CONFIGURATION">ZPush configuration</a></li>
+            <li><a href="#Edit-JOB">Job configuration</a></li>
+            <li><a href="#Edit-Driver">Driver configuration</a>
                 <ul>
-                    <li><a href="#SAMPLE-SAMBA">Samba or Windows share</a></li>
-                    <li><a href="#SAMPLE-WEBDAV">WebDAV</a></li>
-                    <li><a href="#SAMPLE-SFTP">SFTP</a></li>
-                    <li><a href="#SAMPLE-NEXTCLOUD">Nextcloud</a></li>
-                    <li><a href="#SAMPLE-PHOTOPRISM">PhotoPrism</a></li>
+                    <li><a href="#Edit-JOB-Samba-Driver">Samba</a></li>
+                    <li><a href="#Edit-JOB-WebDAV-Driver">WebDAV</a></li>
+                    <li><a href="#Edit-JOB-NextCloud-Driver">Nextcloud</a></li>
+                    <li><a href="#Edit-JOB-SFTP-Driver">SFTP</a></li>
+                    <li><a href="#Edit-JOB-PHOTOPRISM-Driver">PhotoPrism</a></li>
                 </ul>
             </li>
         </ul>
@@ -77,7 +77,8 @@
             <p>
                 ZPush is an Android application that allows you to transfer files from your smartphone to a server on
                 your network.
-                Unlike other Android apps, ZPush uses the approach of transmitting new or modified files to the server only once. 
+                Unlike other Android apps, ZPush uses the approach of transmitting new or modified files to the server
+                only once.
                 This allows you to move the files on the server without them being retransferred by ZPush.
                 <br>
                 ZPush is primarily designed to automatically save e.g. photos from your smartphone to your private
@@ -92,13 +93,12 @@
                 <li>A connection is only established if the server is reachable.</li>
                 <li>Scheduled or manual upload.</li>
                 <li>For NAS-System wait time to wake up the NAS-System</li>
-                <li>support for Android 7 till Android 15</li>
+                <li>support for Android 7 till Android 16</li>
                 <li>Multiple jobs for upload</li>
                 <li>The following server interfaces are supported:
                     <ul>
                         <li>SFTP</li>
                         <li>Samba (SMB 2.0, SMB 2.1 and SMB 3.0)</li>
-                        <li>Windows file shares</li>
                         <li>WebDAV</li>
                         <li>Nextcloud</li>
                         <li>PhotoPrism</li>
@@ -107,32 +107,37 @@
             </ul>
             Do you have suggestions for improvement, please contact me per email: (<a
                 href="mailto:matthias.zartmann+zpush@gmail.com">matthias.zartmann@gmail.com</a>)
-   
 
-          <H2 id="SOYD">Security of your data</H2>
-          <ul>
-            <li>ZPush does not transmit any data to third parties!</li>
-            <li>ZPush unfortunately cannot detect which network the phone is currently connected to, as this would require the "Precise Location" permission.
-                Before a login, ZPush checks whether the server is reachable within the network and also verifies the port used by the protocol.
-                If the server and port are reachable, a login attempt is made.
-                If you want to ensure that ZPush can only connect to your server, 
-                it is best to use the server's IPv6 Unique Local Address (ULA) or Global Unicast Address (GUA).
-                Enter the IPv6 address in the "Target Host" field as shown in the following example:
-                [fd7c:37a0:52c6:0:da3a:ddaa:fccc:b242]</li>
-          </ul>
-   
 
-          <H2 id="GTK">Good to know</H2>
-          <H3>Dynamic Mac Address</H2>
-          <p>
-            Android Wifi connections can have dynamic Mac addresses. This can cause problems when changing the access point, so that the name resolution of the server does not work for a while. To avoid these problems, deactivate the dynamic assignment of the MAC address in the Wifi configuration of the connected Wifi network. Alternatively, you can also work with IP addresses in ZPush.
-         </p>
-         <H3>Problems with ZPush</H2>
-         <p>
-          You are already very close to solving the problem since you are reading this guide :-) But there are always problems where you get stuck and if you think it's ZPush because other software works, please contact me. On the "About ZPush" page there is an “Email to support” button that you can use to send me an email with all the information I need to analyze the problem. The information does not include passwords but server names and IP addresses.
-         </p>
-          
-       </div>
+            <H2 id="SOYD">Security of your data</H2>
+            <ul>
+                <li>ZPush does not transmit any data to third parties!</li>
+                <li>ZPush attaches great importance to your privacy. My software does not send any data without your
+                    knowledge!</li>
+            </ul>
+            <H2 id="NYH">Need your help</H2>
+            I develop ZPush in my spare time and have released it for free. If you want to motivate me to continue
+            working on ZPush, you can do so in 2 minutes of your time by writing a nice 5-star review in the Play Store.
+
+
+            <H2 id="GTK">Good to know</H2>
+            <H3>Dynamic Mac Address</H2>
+                <p>
+                    Android Wifi connections can have dynamic Mac addresses. This can cause problems when changing the
+                    access point, so that the name resolution of the server does not work for a while. To avoid these
+                    problems, deactivate the dynamic assignment of the MAC address in the Wifi configuration of the
+                    connected Wifi network. Alternatively, you can also work with IP addresses in ZPush.
+                </p>
+                <H3>Problems with ZPush</H2>
+                    <p>
+                        You are already very close to solving the problem since you are reading this guide :-) But there
+                        are always problems where you get stuck and if you think it's ZPush because other software
+                        works, please contact me. On the "About ZPush" page there is an “Email to support” button that
+                        you can use to send me an email with all the information I need to analyze the problem. The
+                        information does not include passwords but server names and IP addresses.
+                    </p>
+
+        </div>
 
         <!------Main Page -->
         <div id="MAIN-PAGE" class="section">
@@ -157,7 +162,7 @@
         <!------ZPush configuration -->
         <div id="ZPUSH-CONFIGURATION" class="section">
             <h1>The ZPush configuration</h1>
-          
+
             <img id="mainConfigUploadFrequence" class="image" src="images/mainConfig1.jpg">
             <p class="center">
                 The upload frequency defines how often ZPush check all activated jobs for new files and upload this
@@ -175,15 +180,41 @@
                 <li>Start the background upload only when android detect that the device is idle</li>
                 <li>Start the background upload only when the device is charging</li>
             </ol>
-            <img id="mainConfigUploadRetries"  class="image" src="images/mainConfigRetries.jpg">
-            <p class="center" >Here you specify how often ZPush attempts to repeat the failed operation before it aborts with an error. 
-               You can specify this first for all operations, that are executed during the upload. 
-               For the spinup for the Nas you can set this in the second slider and only affects the Nas spinup.</p>
 
-            <img id="mainConfigUploadExport"  class="image" src="images/mainConfig3.jpg">
+            <div class="itemdesc">
+                <h4>Allowed WiFi SSID</h4>
+                <p class="center">Here you can specify one or more WiFi SSIDs that determine when ZPush can run.
+                    If no Wi-Fi is connected at startup, this setting is ignored and ZPush continues;
+                    if the field is empty, transmission is started for each SSID.
+                </p>
+                <img class="image" src="images/jobConfig-target-SSID-no-permission.jpg">
+
+
+                <p class="center">This red icon indicates that ZPush is missing one or more permissions.
+                    Tap on the icon to grant permission.</p>
+
+
+                <img class="image" src="images/jobConfig-target-SSID-grant-permission.jpg">
+
+                <p class="center">This geen icon indicates that ZPush as acess to the current SSID.
+                    Tap to add the current SSID to the list.</p>
+            </div>
+
+
+            <h4>Retries</h4>
+            <img id="mainConfigUploadRetries" class="image" src="images/mainConfigRetries.jpg">
+            <p class="center">Here you specify how often ZPush attempts to repeat the failed operation before it aborts
+                with an error.
+                You can specify this first for all operations, that are executed during the upload.
+                For the spinup for the Nas you can set this in the second slider and only affects the Nas spinup.</p>
+            <h4>Export/Import</h4>
+            <img id="mainConfigUploadExport" class="image" src="images/mainConfig3.jpg">
             <p class="center">
                 You can export all Job configurations to save this on your device.
                 The import, deletes all exists jobs and restores the jobs from the export.
+                <span class="important">
+                    Please note that the transfer history will also be reset at the time the export took place.
+                </span>
             </p>
         </div>
 
@@ -229,35 +260,59 @@
                 <p class="center">
                     If a file uploaded successfully, ZPush delete this from the device.
                     <span class="important"><br>Please note that the source file will be irretrievably deleted.</span>
+                    <span class="important"><br>For your safety, only use this setting with the “compare checksum” setting.</span>
+
                 </p>
             </div>
 
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-checksum.jpg">
-                <p class="center">If activated, a checksum of the target file and source file is calculated and compared. This ensures that the target file corresponds 100% to the source file.
-              
-                    <span class="important"><br>Please note that double the amount of data is transferred when activated.</span>
+                <p class="center">If activated, a checksum of the target file and source file is calculated and
+                    compared. This ensures that the target file corresponds 100% to the source file.
+
+                    <span class="important"><br>Please note that double the amount of data is transferred when
+                        activated.</span>
                 </p>
-                
+
             </div>
-            
+
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-IncludeSubFolders.jpg">
-                <p class="center">Upload all files included all subfolder, <span class="important"> if enabled the target structure is
-                        hide.</span></p>
+                <p class="center">Upload all files included all subfolder,
+                    <span class="important">if enabled the target structure is hide.</span>
+                </p>
             </div>
             <div class="itemdesc">
-
-
                 <img class="image" src="images/jobConfig-SkipFilesWifi.jpg">
-                <p class="center">Skips files if they are larger than specified and no Wi-Fi is connected. If the job is run again and
+                <p class="center">Skips files if they are larger than specified and no Wi-Fi is connected. If the job is
+                    run again and
                     Wi-Fi is
                     available, the skipped files are transferred. This option is useful if you also transfer files via
                     the
                     mobile network when you are on the move, but prefer to transfer larger files via your Wi-Fi network
                 </p>
             </div>
-         
+
+
+            <div class="itemdesc" id="jobConfigTargetSSID">
+                <h4> Allowed WiFi SSID</h4>
+                <p class="center">Here you can specify one or more WiFi SSIDs that determine when ZPush can run.
+                    If no Wi-Fi is connected at startup, this setting is ignored and ZPush continues;
+                    if the field is empty, transmission is started for each SSID.
+                </p>
+                <img class="image" src="images/jobConfig-target-SSID-no-permission.jpg">
+                <p class="center">This red icon indicates that ZPush is missing one or more permissions.
+                    Tap on the icon to grant permission.</p>
+
+
+                <img class="image" src="images/jobConfig-target-SSID-grant-permission.jpg">
+                <p class="center">This geen icon indicates that ZPush as acess to the current SSID.
+                    Tap to add the current SSID to the list.</p>
+
+            </div>
+
+
+
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-SetStartPoint.jpg">
                 <p class="center">Opens the page for setting the starting point for the next transfer.
@@ -270,60 +325,74 @@
             <!--  filename pattern  -->
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-filename.jpg">
-                <p class="center">Defines the pattern how the target filename will be created. Tab in the icon on the right to open the
+                <p class="center">Defines the pattern how the target filename will be created. Tab in the icon on the
+                    right to open the
                     designer.</p>
-                <p class="center">ZPush reads exif information from your image file when copying (only .jpg and .jpeg exif data is supported) and makes the information available in different variables. If no exif data is found or if it is not a jpg file, the file system information is evaluated.</p>
+                <p class="center">ZPush reads exif information from your image file when copying (only .jpg and .jpeg
+                    exif data is supported) and makes the information available in different variables. If no exif data
+                    is found or if it is not a jpg file, the file system information is evaluated.</p>
 
             </div>
 
             <!--  target structure  -->
-        
+
 
             <div class="itemdesc">
                 <img class="image" src="images/jobConfig-target-stucture.jpg">
-                <p class="center">The target structure can be used to determine the type of files to be stored. This is very useful if you want to store your images in a structured way. </p>
+                <p class="center">The target structure can be used to determine the type of files to be stored. This is
+                    very useful if you want to store your images in a structured way. </p>
                 <p class="center">
-                <span class="important">Please note that the structure can only be set if the option “Include all subdirectories and files” is not activated!</span>
+                    <span class="important">Please note that the structure can only be set if the option “Include all
+                        subdirectories and files” is not activated!</span>
 
                 </p>
                 Follow target structures are availabel:</p>
                 <dl>
                     <dt>Flat</dt>
                     <dd>All files are store under the given path.<br>
-                    <strong>Example: /myPicture.jpg </strong>
+                        <strong>Example: /myPicture.jpg </strong>
                     </dd>
                     <dt>Create year/month directories</dt>
-                    <dd>With this structure, ZPush automatically creates subdirectories with the year and month when the image was photographed or where the file was changed.<br>
+                    <dd>With this structure, ZPush automatically creates subdirectories with the year and month when the
+                        image was photographed or where the file was changed.<br>
                         <strong>Example: /2025/05/myPicture.jpg</strong>
                     </dd>
                     <dt>Create year/month/day directories</dt>
-                    <dd>With this structure, ZPush automatically creates subdirectories with the year, month and day when the image was photographed or where the file was changed.<br>
+                    <dd>With this structure, ZPush automatically creates subdirectories with the year, month and day
+                        when the image was photographed or where the file was changed.<br>
                         <strong>Example: /2025/05/03/myPicture.jpg</strong>
                     </dd>
                     <dt>Create year-month directory</dt>
-                    <dd>With this structure, ZPush automatically creates one subdirectory with the year and month when the image was photographed or where the file was changed.<br>
-                       <strong> Example: /2025-05/myPicture.jpg </strong><br>
+                    <dd>With this structure, ZPush automatically creates one subdirectory with the year and month when
+                        the image was photographed or where the file was changed.<br>
+                        <strong> Example: /2025-05/myPicture.jpg </strong><br>
                     </dd>
                 </dl>
             </div>
 
             <!--  Driver  -->
-            <div class="itemdesc">
+            <div class="itemdesc" id="Edit-Driver">
                 <img class="image" src="images/jobConfig-target-driver.jpg">
                 <p class="center">Select the driver depend on your target server.<br>
                     <br>
+
+                <ol type="1">
+                    <li>Tap here to select the driver.</li>
+                    <li>Tap here to configure the driver.</li>
+                </ol>
+
                 Follow driver are available:</p>
                 <dl>
                     <dt>Samba </dt>
                     <dd>This driver can you use if you want to upload to a Linux samba share or a Windows share.
-                        This driver support the SMB protocol SMB 2.0, SMB 2.1 and SMB 3.0 these are
-                        compatible with Windows 10, Windows 11 and all modern Linux servers.
-                        <span class="important">Please note that Windows 11 no longer supports anonymous connections! With Windows 11, you must authenticate yourself with a user and password.</span>
+                        This driver support the SMB protocol SMB 2.0, SMB 2.1 and SMB 3.0.
+                        Since Microsoft has changed its company policy, I no longer officially support Windows. I no
+                        longer have Windows on my personal computers either and recommend Linux.
                     </dd>
                     <dt>WebDAV</dt>
                     <dd>
                         This is an http/https protocol to transfer files over a web server. ZPush supports streaming
-                        for big uploads. I have tested this with Apache2 under Ubuntu 20.04.5.
+                        for big uploads. I have tested this with Apache2 under Debian 13.
                         Supported http/https authentications are: Basic and Digest
                     </dd>
                     <dt>Nextcloud</dt>
@@ -331,124 +400,310 @@
                         protocol extensions from Nextcloud.</dd>
                     <dt>PhotoPrism</dt>
                     <dd>For upload in PhotoPrism.</dd>
-                    <dt>SFtp (Secure File Transfer Protocol)
+                    <dt>SFtp (Secure File Transfer Protocol)</dt>
                     <dd>This protocol is special for Linux server and use the ssh to transfer files. </dd>
                 </dl>
             </div>
-            <!--  Hostname  -->
-            <div class="itemdesc">
-                <img class="image" src="images/jobConfig-target-host.jpg">
-                <p class="center">Input here the server name or the IPv4 or IPv6 address and if the port deviating from the standard you
-                    can append it by double point. If you have problems with the Name resolution, please use the Ip address or deactivate the dynamic Mac address on your device. </p>
 
-                Samples:
-                <ul>
-                    <li>Ubuntu</li>
-                    <li>Ubuntu:443
-                    <li>192:168:178:55</li>
-                    <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]</li>
-                    <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]:443</li>
-                </ul>
-            </div>
-            <!--  ssl  -->
-            <div class="itemdesc">
-                <img class="image" src="images/jobConfig-target-ssl.jpg">
-                <p class="center">If you have a http based protocol, you can enable SSL to communicate over https.
-                    Self singed certificates are accepted! </p>
-            </div>
-            <!--  username  -->
-            <div class="itemdesc">
-                <img class="image" src="images/jobConfig-target-username.jpg">
-                <p class="center">Input the username target directory need an authentication. Leave empty for anonymous access.</p>
-            </div>
-            <!--  password  -->
-            <div class="itemdesc">
-                <img class="image" src="images/jobConfig-target-password.jpg">
-                <p class="center">Input the right password for the given username.</p>
-            </div>
 
-            <!--  target path  -->
-            <div class="itemdesc">
-                <img class="image" src="images/jobConfig-target-path.jpg">
-                <p class="center">The target path depends on your selected driver</p>
-                <dl>
-                    <dt>Samba (Windows share)/dt>
-                    <dd>\Share\directory1\directory2</dd>
-                    <dt>WebDAV</dt>
-                    <dd>/directory1/directory2</dd>
-                    <dt>NextCloud</dt>
-                    <dd>/remote.php/dav/files/<span class="important">[your nextcloud
-                            username]</span>/directory1/directory2</dd>
-                    <dt>SFTP</dt>
-                    <dd>/directory1/directory2</dd>
-                    <dt>PhotoPrism</dt>
-                    <dd>/originals</dd>
-                </dl>
-                <p class="center">If you click the folder icon, a directory picker opens, and you can browse the right target
-                    directory.</p>
+            <div id="Edit-JOB-Samba-Driver" class="section">
+                <h2>Configure Samba driver</h2>
+                <img class="image" src="images/jobConfig-Samba.jpg">
+                <ol type="1">
+                    <li>
+                        <h4>Host ip or hostname</h4>
+                        Input here the server name or the IPv4 or IPv6 address and if the port deviating from the
+                        standard you
+                        can append it by double point. If you have problems with the Name resolution, please use the Ip
+                        address or deactivate the dynamic Mac address on your device.
+                        <br><br> Samples:
+                        <ul>
+                            <li>Ubuntu</li>
+                            <li>Ubuntu:443
+                            <li>192:168:178:55</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]:443</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Username</h4>
+                        Input the username if you need an authentication. Leave empty for anonymous access.
+                    </li>
+                    <li>
+                        <h4>Password</h4>
+                        Input the right password for the given username.
+                    </li>
+                    <li>
+                        <h4>Target Path</h4>
+                        Input here the samba path like \Share\directory1\directory2 or only \ and then you can use the
+                        picker.
+                    </li>
+                    <li>
+                        <h4>Resume upload on retry</h4>
+                        This new feature allows uploads to resume from where they left off in the event of a connection
+                        interruption. This is very helpful for very large uploads, but for security reasons should only
+                        be used with the checksum function enabled.
+                    </li>
+                    <li>
+                        <h4>Test access</h4>
+                        This button test your setting and check if the server reachable and can access the selected
+                        directory.
+                        <span class="important"><br>Please test always your settings!</span>
+                    </li>
+                </ol>
             </div>
 
-            <!--  Test  -->
-            <div class="itemdesc">
-                <img class="image" src="images/jobConfig-target-test.jpg">
-                <p class="center">This button test your setting and check if the server reachable and can access the selected
-                    directory.
-                    <span class="important"><br>Please test always your settings!</span>
-                </p>
+
+
+            <div id="Edit-JOB-WebDAV-Driver" class="section">
+                <h2>Configure WebDav driver</h2>
+                <img class="image" src="images/jobConfig-WebDAV.jpg">
+                <ol type="1">
+                    <li>
+                        <h4>Host ip or hostname</h4>
+                        Input here the server name or the IPv4 or IPv6 address and if the port deviating from the
+                        standard you
+                        can append it by double point. If you have problems with the Name resolution, please use the Ip
+                        address or deactivate the dynamic Mac address on your device.
+                        <br><br> Samples:
+                        <ul>
+                            <li>Ubuntu</li>
+                            <li>Ubuntu:443
+                            <li>192:168:178:55</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]:443</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Enable SSL (HTTPS)</h4>
+                        You can enable SSL to communicate over https. Self singed certificates are accepted!
+                    </li>
+                    <li>
+                        <h4>Username</h4>
+                        Input the username if you need an authentication. Leave empty for anonymous access.
+                    </li>
+                    <li>
+                        <h4>Password</h4>
+                        Input the right password for the given username.
+                    </li>
+                    <li>
+                        <h4>Target Path</h4> Input here the WebDav path like /directory1/directory2/ if your Url is
+                        https://zpushl1/directory1/directory2/.
+                    </li>
+                    <li>
+                        <h4>Test Access</h4>
+                        This button test your setting and check if the server reachable and can access the selected
+                        directory.
+                        <span class="important"><br>Please test always your settings!</span>
+                    </li>
+                </ol>
             </div>
+
+            <div id="Edit-JOB-NextCloud-Driver" class="section">
+                <h2>Configure Nextcloud driver</h2>
+                <img class="image" src="images/jobConfig-NextCloud.jpg">
+                <ol type="1">
+                    <li>
+                        <h4>Host ip or hostname</h4>
+                        Input here the server name or the IPv4 or IPv6 address and if the port deviating from the
+                        standard you
+                        can append it by double point. If you have problems with the Name resolution, please use the Ip
+                        address or deactivate the dynamic Mac address on your device.
+                        <br><br> Samples:
+                        <ul>
+                            <li>Ubuntu</li>
+                            <li>Ubuntu:443
+                            <li>192:168:178:55</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]:443</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Enable SSL (HTTPS)</h4>
+                        You can enable SSL to communicate over https. Self singed certificates are accepted!
+
+                    </li>
+                    <li>
+                        <h4>Username</h4>
+                        Input the username from your nextcloud login.
+                    </li>
+                    <li>
+                        <h4>Password</h4>
+                        Input the password from yournextcloud login.
+                    </li>
+                    <li>
+                        <h4>Target Path</h4>
+                        Input here the Nextcloud upload API Path, the standard is /remote.php/dav/files/[User
+                        username]/.
+                    </li>
+                    <li>Tap here to generate the standard path with your username.</li>
+                    <li>
+                        <h4>Chunked upload</h4>
+                        Enable this feature to use Nextcloud's special function for larger uploads > 50MB. This allows
+                        you to split the upload into chunks and thus handle even very large files.
+                    </li>
+                    <li>
+                        <h4>Resume uploads on retry</h4>
+                        This new feature allows uploads to resume from where they left off in the event of a connection
+                        interruption. This is very helpful for very large uploads, but for security reasons should only
+                        be used with the checksum function enabled.
+                    </li>
+
+                    <li>
+                        <h4>Test access</h4>
+                        This button test your setting and check if the server reachable and can access the selected
+                        directory.
+                        <span class="important"><br>Please test always your settings!</span>
+                    </li>
+                </ol>
+            </div>
+
+            <div id="Edit-JOB-SFTP-Driver" class="section">
+                <h2>Configure Sftp driver</h2>
+                <img class="image" src="images/jobConfig-Sftp-1.jpg">
+                <img class="image" src="images/jobConfig-Sftp-2.jpg">
+                <ol type="1">
+                    <li>
+                        <h4>Host ip or hostname</h4>
+                        Input here the server name or the IPv4 or IPv6 address and if the port deviating from the
+                        standard you
+                        can append it by double point. If you have problems with the Name resolution, please use the Ip
+                        address or deactivate the dynamic Mac address on your device.
+                        <br><br> Samples:
+                        <ul>
+                            <li>Ubuntu</li>
+                            <li>Ubuntu:443
+                            <li>192:168:178:55</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]:443</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Username</h4>
+                        The username from the ssh login.
+                    </li>
+
+                    <li>
+                        <h4>Certificate</h4>
+                        If you want to log in using a certificate, you can select and save the private key here. ZPush
+                        uses this private key and the user name to connect to the server. This function has been tested
+                        with ed25519 and RSA keys.
+                    </li>
+                    <li>When tap, they delete the stored private certificate key.</li>
+                    <li>When tap, you can import the private certificate key file.</li>
+                    <li>
+                        <h4>Password/Certificate passphrase</h4>
+                        If you have not specified a certificate, you can enter the user's password here. If you are
+                        working with a certificate, you can enter the passphrase used to encrypt the certificate.
+                    </li>
+                    <li>
+                        <h4>Server Fingerprint</h4>
+                        ZPush can verify the server's fingerprint during connection. If it does not match, ZPush
+                        terminates. If the fingerprint is empty, no fingerprint verification is performed.
+                    </li>
+                    <li>
+                        Clears the fingerpint.
+                    </li>
+                    <li>
+                        Determine the fingerprint of the server. Please note that all connection data must be specified
+                        for this.
+                    </li>
+                    <li>
+                        <h4>Target Path</h4>
+                        Input here the filesystem path from the root like /directory1/directory2/.
+                    </li>
+                    <li>
+                        <h4>Resume uploads on retry</h4>
+                        This new feature allows uploads to resume from where they left off in the event of a connection
+                        interruption. This is very helpful for very large uploads, but for security reasons should only
+                        be used with the checksum function enabled.
+                    </li>
+
+                    <li>
+                        <h4>Test access</h4>
+                        This button test your setting and check if the server reachable and can access the selected
+                        directory.
+                        <span class="important"><br>Please test always your settings!</span>
+                    </li>
+
+                </ol>
+
+                <h4>Generate certificate for use with ZPush</h4>
+                <div class="indent">
+                    <h4>Certificate with ed25519 encryption</h4>
+                    <div class="terminal-window">
+                        <div><span class="prompt">zpush@trixie:</span> ssh-keygen -t ed25519 -f zpush_certificate_key
+                        </div>
+                        <div><span class="prompt">zpush@trixie:</span> ssh-copy-id -i zpush_certificate_key.pub
+                            [your-username]@[your server]</div>
+                    </div>
+                    <h4>Certificate with RSA encryption</h4>
+                    <div class="terminal-window">
+                        <div><span class="prompt">zpush@trixie:</span> ssh-keygen -t rsa -b 4096 -f
+                            zpush_certificate_key</div>
+                        <div><span class="prompt">zpush@trixie:</span> ssh-copy-id -i zpush_certificate_key.pub
+                            [your-username]@[your server]</div>
+                    </div>
+                </div>
+                After that, copy the zpush_certificate_key file (private certificate key) to your phone and import this
+                in the Sftp driver configuration.
+            </div>
+
+
+
+            <div id="Edit-JOB-PHOTOPRISM-Driver" class="section">
+                <h2>Configure PhotoPrism® </h2>
+                <img class="image" src="images/jobConfig-PhotoPrism.jpg">
+                <ol type="1">
+                    <li>
+                        <h4>Host ip or hostname</h4>
+                        Input here the server name or the IPv4 or IPv6 address and if the port deviating from the
+                        standard you
+                        can append it by double point. If you have problems with the Name resolution, please use the Ip
+                        address or deactivate the dynamic Mac address on your device.
+                        <br><br> Samples:
+                        <ul>
+                            <li>Ubuntu</li>
+                            <li>Ubuntu:443
+                            <li>192:168:178:55</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]</li>
+                            <li>[2003:de:d71d:4600:20c:aaff:fe42:dde2]:443</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Enable SSL (HTTPS)</h4>
+                        You can enable SSL to communicate over https. Self singed certificates are accepted!
+                    </li>
+                    <li>
+                        <h4>Username</h4>
+                        Input the PhotoPrism username.
+                    </li>
+                    <li>
+                        <h4>Password</h4>
+                        Input the PhotoPrism password for the given username.
+                    </li>
+                    <li>
+                        <h4>Target Path</h4>
+                        PhotoPrism has a standardized upload path, which may vary depending on your installation.
+                        <p><strong>Syntax: [Root path to installation]/orginals/</strong></p>
+                        For a standard installation, the following should be entered here: “/orginals/”
+                    </li>
+                    <li>
+                        <h4>Test Access</h4>
+                        This button test your setting and check if the server reachable and can access the selected
+                        directory.
+                        <span class="important"><br>Please test always your settings!</span>
+                    </li>
+                </ol>
+            </div>
+
         </div>
 
-        <!--Sample Configuration-->
-        <div id="SAMPLE-CONFIGURATIONS" class="section">
-            <h1>Sample Configurations </h1>
-            <p class="center">In this chapter you will see various example configurations of how you can configure your target system.
-            </p>
 
-            <h2 id="SAMPLE-SAMBA">Samba or Windows share</h2>
-            <p class="center">This example uses the root folder from the share ZPUSH_PWD. A user and password are required for this
-                share. If you do not require a user for your share, leave the User field empty.
-            
-                
-            </p>
-            <p>
-                <span class="important">Please note that Windows 11 no longer supports anonymous connections! With Windows 11, you must authenticate yourself with a user and password.</span>
-            </p>
-
-            <img class="image" src="images/sample_samba.jpg">
-
-
-            <h2 id="SAMPLE-WEBDAV">WebDAV</h2>
-            <p class="center">This example uses WebDAV (Web-based Distributed Authoring and Versioning) which can be accessed via Http
-                under port 8080. It requires authentication and this can be done via “Basic Authentication” or “Digest
-                Access Authentication”.</p>
-            <img class="image" src="images/sample_webdav.jpg">
-
-
-
-            <h2 id="SAMPLE-SFTP">SFTP</h2>
-            <p class="center">This example for SFTp (Secure File Transfer Protocol) shows a connection to a Linux computer, the user
-                name and password corresponds to an operating system user. </p>
-            <img class="image" src="images/sample_sftp.jpg">
-
-
-            <h2 id="SAMPLE-NEXTCLOUD">Nextcloud</h2>
-            <p class="center">This is an example for <a href="https://nextcloud.com" target="_blank">Nextcloud</a> users and accesses
-                an installed Nextcloud via Https with the Nextcloud user zpush. Please make sure that the user is
-                correctly specified in the target path. </p>
-            <img class="image" src="images/sample_nextcloud.jpg">
-
-
-            <h2 id="SAMPLE-PHOTOPRISM">PhotoPrism</h2>
-            <p class="center">This example uses the <a href="https://www.photoprism.app/" target="_blank">PhotoPrism</a> software, in
-                this example PhotoPrism is configured for Https and runs under the standard port 2342.</p>
-            <img class="image" src="images/sample_photoprism.jpg">
-
-
-        </div>
 
         <hr>
-        
-        
+
+
         <div class="hcenter" style="margin-bottom: 2em;margin-top: 2em;">
             ZPush by Matthias Zartmann<br> Email: <a id="email" href="--">Please activate Javascript</a>
 
@@ -464,26 +719,27 @@
             <a href="./dsgvo.html">Datenschutz-Grundverordnung</a>
 
         </div>
-     
+
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
         window.cookieconsent.initialise({
-        "palette": {
-        "popup": { "background": "#2E2E2E", "text": "#FFFFFF"},
-        "button": { "background": "#181818"}},
-        "theme": "basic",
-        "position": "bottom-right",
-        "content": {
-            "message": "Diese Webseite verwendet Cookies, um Ihnen ein angenehmeres Surfen zu ermöglichen.",
-            "dismiss": "Ok",
-            "link": "Lese die DSGVO",
-            "href": "./dsgvo.html"
+            "palette": {
+                "popup": { "background": "#2E2E2E", "text": "#FFFFFF" },
+                "button": { "background": "#181818" }
+            },
+            "theme": "basic",
+            "position": "bottom-right",
+            "content": {
+                "message": "Diese Webseite verwendet Cookies, um Ihnen ein angenehmeres Surfen zu ermöglichen.",
+                "dismiss": "Ok",
+                "link": "Lese die DSGVO",
+                "href": "./dsgvo.html"
             }
         });
-        </script>
+    </script>
 </body>
 
 </html>

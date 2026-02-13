@@ -39,7 +39,17 @@ h2 {
     max-width: 80%;
     min-width: 200px;
 }
+.image-small {
+    border-radius: 8px;
+    border: 2px solid #2294f0;
 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    max-width: 20%;
+    min-width: 50px;
+}
 a {
     color: #2294f0;
 }
@@ -76,4 +86,39 @@ dd
 
 .itemdesc  {
    margin-bottom: 4em;  
+}
+
+.terminal-window {
+    background-color: #1e1e1e;       /* Dunkler Hintergrund */
+    color: #00ff00;                  /* Klassisches "Matrix"-Grün */
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 1.5;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+/* Optional: Ein simulierter Cursor-Effekt */
+.terminal-window::after {
+    content: "_";
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent; }
+    50% { color: #00ff00; }
+}
+
+/* Styling für den Prompt (z.B. user@debian:~) */
+.prompt {
+    color: #55ff55;
+    font-weight: bold;
+}
+
+.indent {
+   margin-left: 2em; 
 }
