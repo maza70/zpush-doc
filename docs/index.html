@@ -628,18 +628,20 @@
                 </ul>
 
                 <h4>Generate certificate for use with ZPush</h4>
+               For these examples, you need a Linux computer with an OpenSSH client installed. If it is not installed, you can install it for Debian systems, for example, with `sudo apt install openssh-client`.
                 <div class="indent">
-                    <h4>Certificate with ed25519 encryption</h4>
+                    <h4>Create certificate with ed25519 encryption</h4>
                     <div class="terminal-window">
                         <div><span class="prompt">zpush@trixie:</span> ssh-keygen -t ed25519 -f zpush_certificate_key
                         </div>
                         <div><span class="prompt">zpush@trixie:</span> ssh-copy-id -i zpush_certificate_key.pub
                             [your-username]@[your server]</div>
                     </div>
-                    <h4>Certificate with RSA encryption</h4>
+                    <h4>Create certificate with RSA encryption</h4>
                     <div class="terminal-window">
                         <div><span class="prompt">zpush@trixie:</span> ssh-keygen -t rsa -b 4096 -f
                             zpush_certificate_key</div>
+
                         <div><span class="prompt">zpush@trixie:</span> ssh-copy-id -i zpush_certificate_key.pub
                             [your-username]@[your server]</div>
                     </div>
@@ -753,8 +755,9 @@
             ZPush by Matthias Zartmann<br> Email: <a id="email" href="--">Please activate Javascript</a>
 
             <script language="JavaScript">
-                let email = "Matthias." + "Zartmann" + "@";
-                email += "g" + "mail" + ".com";
+                let email = "zpush"  + "@";
+                email += "ma" + "-" + "za.";
+                email += "de";
                 document.getElementById("email").href = "mailto:" + email;
                 document.getElementById("email").innerText = email;
             </script>
