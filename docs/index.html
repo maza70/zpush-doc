@@ -73,7 +73,8 @@
             <li><a href="#SERVER-PICKER">Server Picker</a></li>
             <li><a href="#EDIT-STARTPOINT">Job starting point</a></li>
             <li><a href="#EDIT-FILENAMEPATTERN">Filename pattern</a></li>
-            
+            <li><a href="#MANGENTACLOUD">ZPush and MangentaCLOUD</a></li>
+
         </ul>
 
         <div id="INTRODUCTION" class="section">
@@ -295,9 +296,9 @@
                 <img class="image" src="images/jobConfig-SetStartPoint.jpg">
                 <p class="center">Opens the page for setting the starting point for the next transfer.
                     This makes it possible to skip files or transfer them again.
-                    <p class="hcenter">
+                <p class="hcenter">
                     see: <a href="#EDIT-STARTPOINT">Job starting point</a>
-                    </p>
+                </p>
                 </p>
             </div>
 
@@ -316,7 +317,7 @@
                 <p class="hcenter">
                     see: <a href="#EDIT-FILENAMEPATTERN">Filename pattern</a>
                 </p>
-                
+
             </div>
 
             <!--  target structure  -->
@@ -628,7 +629,8 @@
                 </ul>
 
                 <h4>Generate certificate for use with ZPush</h4>
-               For these examples, you need a Linux computer with an OpenSSH client installed. If it is not installed, you can install it for Debian systems, for example, with `sudo apt install openssh-client`.
+                For these examples, you need a Linux computer with an OpenSSH client installed. If it is not installed,
+                you can install it for Debian systems, for example, with `sudo apt install openssh-client`.
                 <div class="indent">
                     <h4>Create certificate with ed25519 encryption</h4>
                     <div class="terminal-window">
@@ -711,11 +713,11 @@
                 server is located.
                 ZPush searches for servers in the DNS and checks whether they have a standard port open.
                 Unfortunately, pinging is blocked by Android.
-            <p  class="center">
+            <p class="center">
                 Green means the server is available and a standard TCP port is open (ZPush checks the following ports:
                 22, 445, 80, 443, 3389).
             </p>
-            <p  class="center">
+            <p class="center">
                 Red means the server is not responding to the standard ports and it cannot be determined whether it is
                 running or still on the network.
             </p>
@@ -729,33 +731,64 @@
         <div id="EDIT-STARTPOINT" class="section">
             <H2>Job Starting point</H2>
             <img class="image" src="images/zpush_startpoint.jpg">
-            <p  class="center">
+            <p class="center">
                 In this dialog, you can specify the starting point for the next upload.
                 You can also set the starting point to a date in the past to transfer files again.
-                Once you have selected the date, ZPush will only transfer files that are equal to or newer than the selected date during the next upload.
+                Once you have selected the date, ZPush will only transfer files that are equal to or newer than the
+                selected date during the next upload.
                 The dialog also shows you which file ZPush will start with and how much data will be transferred.
             </p>
         </div>
-        
+
         <div id="EDIT-FILENAMEPATTERN" class="section">
             <H2>Job Starting point</H2>
             <img class="image" src="images/zpush_pattern.jpg">
             <p class="center">
-                ZPush reads exif information from your image file when copying (only .jpg and .jpeg exif data is supported) and makes the information available in different variables. 
+                ZPush reads exif information from your image file when copying (only .jpg and .jpeg exif data is
+                supported) and makes the information available in different variables.
                 If no exif data is found or if it is not a jpg file, the file system information is evaluated.
             </p>
             <p class="center">
-            You can customize the file name here to suit your needs, but the original file name must always be included, otherwise ambiguities may arise. 
+                You can customize the file name here to suit your needs, but the original file name must always be
+                included, otherwise ambiguities may arise.
             </p>
         </div>
         <hr>
+
+        <div id="MANGENTACLOUD" class="section">
+            <H2>MangentaCLOUD</H2>
+            <p class="center">
+                ZPush works in conjunction with MangentaCLOUD and is
+                configured using the built-in “Nextcloud” or “WebDAV” driver.
+                The Nextcloud driver has the advantage of being able to handle even very large uploads.
+                In the following example, I use the Nextcloud driver.
+
+            </p>
+            <H3>Step 1: Add a new device in MangentaCLOUD</H3>
+            <img class="image" src="images/magenta-cloud/mangenta_cloud_1.jpg">
+            <H3>Step 2: Write down your username and password </H3>
+            <img class="image" src="images/magenta-cloud/mangenta_cloud_2.jpg">
+            <H3>Step 3: Create a new ZPush job </H3>
+            <p class="center">
+                Select Nextcloud as the driver and configure the following settings.
+            </p>
+
+            <img class="image" src="images/magenta-cloud/mangenta_cloud_zpush.jpg">
+            <p class="center">
+                If you've set everything up correctly, the test should now work when you click “Test access.”
+            </p>
+
+
+        </div>
+        <hr>
+
 
 
         <div class="hcenter" style="margin-bottom: 2em;margin-top: 2em;">
             ZPush by Matthias Zartmann<br> Email: <a id="email" href="--">Please activate Javascript</a>
 
             <script language="JavaScript">
-                let email = "zpush"  + "@";
+                let email = "zpush" + "@";
                 email += "ma" + "-" + "za.";
                 email += "de";
                 document.getElementById("email").href = "mailto:" + email;
