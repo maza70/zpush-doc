@@ -205,16 +205,33 @@
                 with an error.
                 You can specify this first for all operations, that are executed during the upload.
                 For the spinup for the Nas you can set this in the second slider and only affects the Nas spinup.</p>
-            <h4>Common</h4>
-            <img id="mainConfigCommon" class="image" src="images/mainConfig4.jpg">
+            <h4 id="mainConfigCommon">Common</h4>
+            <img class="image" src="images/mainConfig-show-uploaded-notification.jpg">
             <p class="center">
-               If this option is enabled and ZPush has uploaded files in the background, 
-               a notification will appear and remain on the screen. 
-               This is useful if you want to be notified when new files have been uploaded. 
-               The notification appears only if at least one file has been uploaded.
+                If this option is enabled and ZPush has uploaded files in the background,
+                a notification will appear and remain on the screen.
+                This is useful if you want to be notified when new files have been uploaded.
+                The notification appears only if at least one file has been uploaded.
 
             </p>
-                
+            <img class="image" src="images/mainConfig-common-post-notify-url.jpg">
+            <p class="center">
+                If you provide a URL here, ZPush will make an HTTP POST request to this URL once all jobs have executed.
+                This allows you, for example, to trigger a follow-up process on your server to process the new files.
+                I use this to trigger a rescan on my Immich server.<br>
+                <span class="important">Please note: This URL is only called if at least one file has been
+                    transferred.</span>
+            </p>
+
+            <p class="hcenter"><b>The following JSON is transmitted with the HTTP POST request:</b></p>
+            <pre>
+                    {
+                        "notifyType":"Upload",
+                        "uploadedFileCount":53
+                    }
+                </pre>
+
+
             <h4>Export/Import</h4>
             <img id="mainConfigUploadExport" class="image" src="images/mainConfig3.jpg">
             <p class="center">
@@ -329,7 +346,26 @@
                 </p>
 
             </div>
+            <!--post notify url -->
+            <div class="itemdesc">
+                <img class="image" src="images/jobConfig-target-post-notify-url.jpg">
+                <p class="hcenter">If you provide a URL here, Zpush will send an
+                    HTTP POST request to this URL once the upload is complete.
+                    This allows you, for example, to trigger a follow-up process on your server to handle the new files.
+                    I use this to trigger a rescan on my Immich server.<br>
+                    <span class="important">Please note: This URL is only called if at least one file has been transferred.</span>
+                </p>
 
+                <p class="hcenter"><b>The following JSON is transmitted with the HTTP POST request:</b></p>
+                <pre>
+                    {
+                        "notifyType":"Job",
+                        "uploadedFileCount":12
+                    }
+                </pre>
+
+
+            </div>
             <!--  target structure  -->
 
 
